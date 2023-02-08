@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="-2.0" layoutY="140.0" prefHeight="390.0" prefWidth="900.0">
+         <columns>
+            <TableColumn prefWidth="119.66666412353516" text="Nom" />
+            <TableColumn prefWidth="129.0" text="Prénom" />
+            <TableColumn prefWidth="131.66665649414062" text="Date de naissance" />
+            <TableColumn prefWidth="122.66665649414062" text="GSM" />
+            <TableColumn prefWidth="40.0" text="Sexe" />
+            <TableColumn prefWidth="153.99996948242188" text="Prochaine renedez vous" />
+            <TableColumn prefWidth="190.0" text="Actions" />
+         </columns>
+      </TableView>
+      <Pane disable="true" layoutY="67.0" prefHeight="5.0" prefWidth="900.0" style="-fx-background-color: teal;" />
+      <Text fontSmoothingType="LCD" layoutX="394.0" layoutY="28.0" strokeType="INSIDE" strokeWidth="0.0" text="Gestion des patients" wrappingWidth="162.13671040534973">
+         <font>
+            <Font name="Calibri Bold Italic" size="16.0" />
+         </font></Text>
+
+
+   </children>
+</AnchorPane>
