@@ -1,30 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edoctors.controllers.TableViewController">
    <children>
-      <TableView layoutX="-2.0" layoutY="140.0" prefHeight="390.0" prefWidth="900.0">
-         <columns>
-            <TableColumn prefWidth="119.66666412353516" text="Nom" />
-            <TableColumn prefWidth="129.0" text="Prénom" />
-            <TableColumn prefWidth="131.66665649414062" text="Date de naissance" />
-            <TableColumn prefWidth="122.66665649414062" text="GSM" />
-            <TableColumn prefWidth="40.0" text="Sexe" />
-            <TableColumn prefWidth="153.99996948242188" text="Prochaine renedez vous" />
-            <TableColumn prefWidth="190.0" text="Actions" />
-         </columns>
-      </TableView>
-      <Pane disable="true" layoutY="67.0" prefHeight="5.0" prefWidth="900.0" style="-fx-background-color: teal;" />
-      <Text fontSmoothingType="LCD" layoutX="394.0" layoutY="28.0" strokeType="INSIDE" strokeWidth="0.0" text="Gestion des patients" wrappingWidth="162.13671040534973">
-         <font>
-            <Font name="Calibri Bold Italic" size="16.0" />
-         </font></Text>
+      <HBox>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <children>
+             <ImageView fitHeight="50.0"
+                        fitWidth="50.0">
+                 <image>
+                     <Image
+                             url="doctor.png"
+                             backgroundLoading="true"
+                     />
+                 </image>
+
+             </ImageView>
+   
+             <Text fill="TEAL" fontSmoothingType="LCD" strokeType="INSIDE" strokeWidth="0.0" text="Bienvenue à E-doctor" wrappingWidth="654.1367104053497">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+
+       <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="1042.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Gestion de patients">
+            <content>
+                <AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <Pane layoutY="68.0" prefHeight="5.0" prefWidth="1049.0" style="-fx-background-color: teal;" />
+                        <TableView fx:id="patientTable" layoutX="273.0" layoutY="114.0" maxHeight="409.0" maxWidth="911.0" minHeight="390.0" minWidth="500.0" prefHeight="409.0" prefWidth="767.0" style="-fx-alignment: center;">
+                            <columns>
+                                <TableColumn fx:id="nameCol" prefWidth="87.0" style="-fx-alignment: center;" text="Nom" />
+                                <TableColumn fx:id="lastNameCol" prefWidth="88.66668701171875" style="-fx-alignment: center;" text="Prénom" />
+                                <TableColumn fx:id="birthCol" prefWidth="136.33331298828125" style="-fx-alignment: center;" text="Date de naissance" />
+                                <TableColumn fx:id="phoneCol" prefWidth="78.33331298828125" style="-fx-alignment: center;" text="GSM" />
+                                <TableColumn fx:id="sexeCol" prefWidth="46.3333740234375" style="-fx-alignment: center;" text="Sexe" />
+                                <TableColumn fx:id="editCol" prefWidth="168.3333740234375" style="-fx-alignment: center;" text="Actions" />
+                              <TableColumn fx:id="idCol" prefWidth="140.66668701171875" style="-fx-alignment: center;" text="Matricule" />
+                            </columns>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </TableView>
+                        <Text fontSmoothingType="LCD" layoutX="394.0" layoutY="28.0" strokeType="INSIDE" strokeWidth="0.0" text="Gestion des patients" wrappingWidth="162.13671040534973">
+                            <font>
+                                <Font name="Calibri Bold Italic" size="16.0" />
+                            </font>
+                        </Text>
+                        <Pane layoutX="7.0" layoutY="106.0" prefHeight="409.0" prefWidth="235.0" style="-fx-background-color: teal;">
+      
+                            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="235.0" style="-fx-color: red;" styleClass="btn" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="384.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations de patient" wrappingWidth="229.921875">
+                                                <font>
+                                                    <Font name="Century Gothic" size="17.0" />
+                                                </font>
+                                                <HBox.margin>
+                                                    <Insets left="10.0" />
+                                                </HBox.margin>
+                                            </Text>
+      
+                                        </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="26.0" prefWidth="375.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="80.13671875">
+                                                <font>
+                                                    <Font name="Century Gothic" size="21.0" />
+                                                </font>
+                                            </Text>
+                                            <TextField fx:id="nameField" prefHeight="25.0" prefWidth="161.0" />
+      
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="31.0" prefWidth="355.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="80.13671875">
+                                                <font>
+                                                    <Font name="Century Gothic" size="21.0" />
+                                                </font>
+                                            </Text>
+                                            <TextField fx:id="lastNameField" prefHeight="25.0" prefWidth="291.0" />
+      
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="31.0" prefWidth="355.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="GSM" wrappingWidth="80.13671875">
+                                                <font>
+                                                    <Font name="Century Gothic" size="21.0" />
+                                                </font>
+                                            </Text>
+                                            <TextField fx:id="phoneField" prefHeight="25.0" prefWidth="286.0" />
+      
+      
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="31.0" prefWidth="355.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexe" wrappingWidth="65.1367266575495">
+                                                <font>
+                                                    <Font name="Century Gothic" size="16.0" />
+                                                </font>
+                                            </Text>
+                                            <RadioButton fx:id="female" mnemonicParsing="false" prefHeight="37.0" prefWidth="92.0" text="F" textFill="WHITE">
+                                                <toggleGroup>
+                                                    <ToggleGroup fx:id="right" />
+                                                </toggleGroup>
+                                                <padding>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </padding>
+                                          <font>
+                                             <Font size="10.0" />
+                                          </font>
+                                       </RadioButton>
+                                            <RadioButton fx:id="male" layoutX="268.0" layoutY="16.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="45.0" text="H" textFill="WHITE" toggleGroup="$right">
+                                                <HBox.margin>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </HBox.margin>
+                                       </RadioButton>
+      
+      
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="199.0">
+                                        <children>
+                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="114.13671402136481">
+                                                <font>
+                                                    <Font name="Century Gothic" size="11.0" />
+                                                </font>
+                                            </Text>
+                                            <DatePicker fx:id="birthDateField" prefHeight="25.0" prefWidth="111.0" />
+      
+      
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+      
+      
+      
+      
+                                    <HBox alignment="CENTER" prefHeight="47.0" prefWidth="256.0">
+                                        <VBox.margin>
+                                            <Insets top="25.0" />
+                                        </VBox.margin>
+                                        <children>
+                                            <Button mnemonicParsing="false" onMouseClicked="#addPatient" prefHeight="28.0" prefWidth="104.0" style="-fx-background-color: #00E676;" styleClass="btn" text="Valider">
+                                                <padding>
+                                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                </padding>
+                                                <HBox.margin>
+                                                    <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                </HBox.margin>
+                                       </Button>
+                                            <Button mnemonicParsing="false" onMouseClicked="#clearFields" prefHeight="28.0" prefWidth="91.0" style="-fx-background-color:red;" text="Annuler">
+                                                <padding>
+                                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                </padding>
+                                                <HBox.margin>
+                                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                </HBox.margin>
+                                       </Button>
+                                        </children>
+                                    </HBox>
+      
+      
+                                </children>
+                                <padding>
+                                    <Insets bottom="5.0" left="8.0" right="8.0" top="5.0" />
+                                </padding>
+                            </VBox>
+      
+                        </Pane>
+                        <Label fx:id="alertText" layoutX="7.0" layoutY="88.0" onMouseClicked="#removeAlert" prefHeight="17.0" prefWidth="266.0" style="-fx-alignment: center;" textFill="RED" />
+      
+      
+      
+                    </children>
+                </AnchorPane>
+      
+            </content>
+          </Tab>
+          <Tab text="Gestion de rendez vous">
+              <content>
+                  <AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+                      <children>
+                          <Pane layoutY="68.0" prefHeight="5.0" prefWidth="1049.0" style="-fx-background-color: teal;" />
+                          <TableView fx:id="meetTable" layoutX="288.0" layoutY="107.0" maxHeight="409.0" maxWidth="911.0" minHeight="390.0" minWidth="500.0" prefHeight="409.0" prefWidth="652.0" style="-fx-alignment: center;">
+                              <columns>
+                                  <TableColumn fx:id="idMeetCol" prefWidth="86.0" style="-fx-alignment: center;" text="Matricule" />
+                                  <TableColumn fx:id="idPatientMeetCol" prefWidth="108.0" style="-fx-alignment: center;" text="Matricule patient" />
+                                  <TableColumn fx:id="nameMeetCol" prefWidth="83.99996948242188" style="-fx-alignment: center;" text="Nom" />
+                                  <TableColumn fx:id="lastNameMeetCol" prefWidth="110.6666259765625" style="-fx-alignment: center;" text="Prénom" />
+                                  <TableColumn fx:id="dateMeetCol" prefWidth="120.0" style="-fx-alignment: center;" text="Date de rendez vous" />
+                                  <TableColumn fx:id="editMeetCol" prefWidth="134.66668701171875" style="-fx-alignment: center;" text="Actions" />
+                              </columns>
+                              <padding>
+                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </padding>
+                          </TableView>
+                          <Text fontSmoothingType="LCD" layoutX="394.0" layoutY="28.0" strokeType="INSIDE" strokeWidth="0.0" text="Gestion des rendez vous" wrappingWidth="162.13671040534973">
+                              <font>
+                                  <Font name="Calibri Bold Italic" size="16.0" />
+                              </font>
+                          </Text>
+                        <VBox layoutX="7.0" layoutY="106.0">
+                           <children>
+                                <Pane prefHeight="409.0" prefWidth="266.0" style="-fx-background-color: teal;">
+      
+                                    <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="258.0" style="-fx-color: red;" styleClass="btn" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+                                        <padding>
+                                            <Insets bottom="5.0" left="8.0" right="8.0" top="5.0" />
+                                        </padding>
+                                    <children>
+                                       <Label prefHeight="31.0" prefWidth="141.0" text="Rendez Vous" textFill="WHITE">
+                                          <font>
+                                             <Font name="Calibri" size="26.0" />
+                                          </font>
+                                       </Label>
+                                       <HBox>
+                                          <children>
+                                             <Label prefHeight="28.0" prefWidth="137.0" text="Matricule patient" textFill="WHITE">
+                                                 <font>
+                                                     <Font name="Century Gothic" size="12.0" />
+                                                 </font>
+                                                <HBox.margin>
+                                                   <Insets />
+                                                </HBox.margin>
+                                             </Label>
+                                             <TextField fx:id="matriculeMeet" prefHeight="25.0" prefWidth="117.0" />
+                                          </children>
+                                          <VBox.margin>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </VBox.margin>
+                                       </HBox>
+                                       <HBox layoutX="18.0" layoutY="47.0">
+                                          <children>
+                                             <Label prefHeight="28.0" prefWidth="163.0" text="Date" textFill="WHITE">
+                                                 <font>
+                                                     <Font name="Century Gothic" size="14.0" />
+                                                 </font>
+                                             </Label>
+                                             <DatePicker fx:id="dateMeet" prefHeight="25.0" prefWidth="150.0" />
+                                          </children>
+                                          <VBox.margin>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </VBox.margin>
+                                       </HBox>
+                                       <HBox prefHeight="42.0" prefWidth="242.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#addMeet" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #00E676" text="Valider">
+                                                <HBox.margin>
+                                                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </HBox.margin>
+                                             </Button>
+                                             <Button mnemonicParsing="false" onMouseClicked="#clearFieldsMeet" prefHeight="26.0" prefWidth="105.0" text="Annuler">
+                                                <HBox.margin>
+                                                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </HBox.margin>
+                                             </Button>
+                                          </children>
+                                          <VBox.margin>
+                                             <Insets top="160.0" />
+                                          </VBox.margin>
+                                       </HBox>
+                                    </children>
+                                    </VBox>
+      
+                                </Pane>
+                           </children>
+                        </VBox>
+                        <Label fx:id="alertTextMeet" layoutX="7.0" layoutY="88.0" onMouseClicked="#removeAlertMeet" prefHeight="17.0" prefWidth="266.0" textFill="RED" />
 
 
+
+                      </children>
+                  </AnchorPane>
+
+              </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
-</AnchorPane>
+</VBox>
